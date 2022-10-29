@@ -57,9 +57,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  let sumAB = sum(a, b);
+  let sumTotal = sum(sumAB[0], c);
+  let prodAB = multiply(a, b);
+  let prodTotal = multiply(prodAB[0], c);
+  let sumString = `${a} and ${b} and ${c} sum to ${sumTotal[0]}.`;
+  let prodString = `The product of ${a} and ${b} and ${c} is ${prodTotal[0]}.`;
+  let result = [sumTotal[0], prodTotal[0], sumString, prodString];
+  return result;
 }
 
+
+
+console.log(sumAndMultiply(4, 7, 5));
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
 
